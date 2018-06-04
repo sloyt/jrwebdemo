@@ -21,19 +21,13 @@ class Viewer extends Component {
     }
 
     loadReport = (uri) => {
-        Api.get('reports' + uri + '.html').then(
-            (response) => {
-                this.setState({ content: response.data });
-            }
-        ).catch(
-            (error) => console.log(error)
-        );
+        this.setState({ content: Api.defaults.baseURL + 'flow.html?_flowId=viewReportFlow&ParentFolderUri=/reports&reportUnit=' + uri + '&standAlone=true&decorate=no&j_username=joeuser&j_password=123456' });
     }
 
     render() {
         return (
             this.state.content.length > 0 ? (
-                <div dangerouslySetInnerHTML={{__html: this.state.content}}></div>
+                <iframe src={this.state.content} width='100%' height='100%' frameBorder={0} title='Отчет'></iframe>
             ) : (
                 <div>Отчет загружается...</div>
             )

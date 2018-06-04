@@ -13,7 +13,7 @@ class List extends Component {
     }
 
     componentDidMount() {
-        Api.get('resources', {
+        Api.get('rest_v2/resources', {
             params: {
                 folderUri: '/reports',
                 type: 'reportUnit',

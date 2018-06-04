@@ -1,6 +1,8 @@
 {
   "name": "jrweb",
   "version": "0.1.0",
+  "homepage": "https://github.com/sloyt/jrwebdemo",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "react": "^16.4.0",
